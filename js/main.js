@@ -55,7 +55,12 @@ if (data.recipes.length === 0) {
     title.textContent = firstRecipe.name;
     article.appendChild(title);
 
-    
+// Skapar och visar receptets bild
+    const image = document.createElement("img");
+    image.src = firstRecipe.image;
+    image.alt = firstRecipe.name;
+    article.appendChild(image);
+
 
 }
 
