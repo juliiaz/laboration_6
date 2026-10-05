@@ -47,8 +47,19 @@ if (data.recipes.length === 0) {
 
 // Skapar article-element för receptet
     const article = document.createElement("article");
+ // Lägger article-elementet i recipe-section
     recipeSection.appendChild(article);
+
+// Skapar och visar receptets namn
+    const title = document.createElement("h3");
+    title.textContent = firstRecipe.name;
+    article.appendChild(title);
+
+    
+
 }
+
+
 
 
 
