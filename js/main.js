@@ -19,5 +19,14 @@ if (searchText.trim() === "") {
 
 errorMessage.textContent = "";
 
+getRecipes(searchText);
 });
+
+
+async function getRecipes(searchText) {
+    const response = await fetch("https://dummyjson.com/recipes/search?q=" + searchText);
+    const data = await response.json();
+
+}
+
 
