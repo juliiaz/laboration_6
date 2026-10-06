@@ -68,21 +68,36 @@ if (data.recipes.length === 0) {
 
 // Skapar och visar receptets information
     const servings = document.createElement("p");
-    servings.textContent = "Servings: " + firstRecipe.servings;
+   
+    const servingsStrong = document.createElement("strong");
+    servingsStrong.textContent = "Servings: ";
+// Lägger "Servings:" inuti p-elementet
+    servings.appendChild(servingsStrong);
+// Lägger till antalet portioner från API:t
+    servings.append(firstRecipe.servings);
+// Lägger p-elementet inuti recipeInfo
     recipeInfo.appendChild(servings);
 
     const prepTime = document.createElement("p");
-    prepTime.textContent = "Prep Time: " + firstRecipe.prepTimeMinutes;
+    const prepTimeStrong = document.createElement("strong");
+    prepTimeStrong.textContent = "Prep Time: ";
+    prepTime.appendChild(prepTimeStrong);
+    prepTime.append(firstRecipe.prepTimeMinutes);
     recipeInfo.appendChild(prepTime);
 
     const cookTime = document.createElement("p");
-    cookTime.textContent = "Cook Time: " + firstRecipe.cookTimeMinutes;
+    const cookTimeStrong = document.createElement("strong");
+    cookTimeStrong.textContent = "Cook Time: ";
+    cookTime.appendChild(cookTimeStrong);
+    cookTime.append(firstRecipe.cookTimeMinutes);
     recipeInfo.appendChild(cookTime);
 
     const difficulty = document.createElement("p");
-    difficulty.textContent = "Difficulty: " + firstRecipe.difficulty;
+    const difficultyStrong = document.createElement("strong");
+    difficultyStrong.textContent = "Difficulty: ";
+    difficulty.appendChild(difficultyStrong);
+    difficulty.append(firstRecipe.difficulty);
     recipeInfo.appendChild(difficulty);
-
 
 
 }
