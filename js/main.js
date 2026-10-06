@@ -104,7 +104,7 @@ if (data.recipes.length === 0) {
     ingredientsTitle.textContent = "Ingredients";
     article.appendChild(ingredientsTitle);
 
-// Skapar en lista för ingredienser
+// Skapar en punktlista för ingredienser
     const ingredientsList = document.createElement("ul");
     article.appendChild(ingredientsList);
 // Loopar igenom ingredienserna och lägger till dem i listan
@@ -113,6 +113,23 @@ if (data.recipes.length === 0) {
         ingredientItem.textContent = ingredient;
         ingredientsList.appendChild(ingredientItem);
     });
+
+// Skapar titel för instruktionerna
+   const instructionsTitle = document.createElement("h4");
+   instructionsTitle.textContent = "Instructions";
+   article.appendChild(instructionsTitle);
+
+// Skapar en numrerad lista för instruktionerna
+   const instructionsList = document.createElement("ol");
+    article.appendChild(instructionsList);
+
+// Loopar igenom instruktionerna och lägger till dem i listan
+    firstRecipe.instructions.forEach(function (instruction) {
+        const instructionItem = document.createElement("li");
+        instructionItem.textContent = instruction;
+        instructionsList.appendChild(instructionItem);
+    });
+
 
 
 
