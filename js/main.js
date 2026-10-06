@@ -99,6 +99,28 @@ if (data.recipes.length === 0) {
     difficulty.append(firstRecipe.difficulty);
     recipeInfo.appendChild(difficulty);
 
+// Skapar titel för ingredienslistan
+    const ingredientsTitle = document.createElement("h4");
+    ingredientsTitle.textContent = "Ingredients";
+    article.appendChild(ingredientsTitle);
+
+// Skapar en lista för ingredienser
+    const ingredientsList = document.createElement("ul");
+    article.appendChild(ingredientsList);
+// Loopar igenom ingredienserna och lägger till dem i listan
+    firstRecipe.ingredients.forEach(function (ingredient) {
+        const ingredientItem = document.createElement("li");
+        ingredientItem.textContent = ingredient;
+        ingredientsList.appendChild(ingredientItem);
+    });
+
+
+
+
+
+
+
+
 
 }
 
