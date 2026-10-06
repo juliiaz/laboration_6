@@ -61,6 +61,11 @@ if (data.recipes.length === 0) {
     image.alt = firstRecipe.name;
     article.appendChild(image);
 
+// Skapar behållare för receptets information
+    const recipeInfo = document.createElement("div");
+    recipeInfo.className = "recipe-info";
+    article.appendChild(recipeInfo);
+
 
 }
 
