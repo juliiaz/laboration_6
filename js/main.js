@@ -66,6 +66,24 @@ if (data.recipes.length === 0) {
     recipeInfo.className = "recipe-info";
     article.appendChild(recipeInfo);
 
+// Skapar och visar receptets information
+    const servings = document.createElement("p");
+    servings.textContent = "Servings: " + firstRecipe.servings;
+    recipeInfo.appendChild(servings);
+
+    const prepTime = document.createElement("p");
+    prepTime.textContent = "Prep Time: " + firstRecipe.prepTimeMinutes;
+    recipeInfo.appendChild(prepTime);
+
+    const cookTime = document.createElement("p");
+    cookTime.textContent = "Cook Time: " + firstRecipe.cookTimeMinutes;
+    recipeInfo.appendChild(cookTime);
+
+    const difficulty = document.createElement("p");
+    difficulty.textContent = "Difficulty: " + firstRecipe.difficulty;
+    recipeInfo.appendChild(difficulty);
+
+
 
 }
 
