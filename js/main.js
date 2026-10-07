@@ -15,8 +15,8 @@ const recipeSection = document.getElementById("recipe");
 searchForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-
 const searchText = searchInput.value;
+
 // Kontrollerar att sökfältet inte är tomt
 if (searchText.trim() === "") {
     errorMessage.textContent = "Skriv in en sökfras!";
@@ -30,12 +30,14 @@ getRecipes(searchText);
 
 // Hämtar recept från API:t
 async function getRecipes(searchText) {
+    try {
     const response = await fetch("https://dummyjson.com/recipes/search?q=" + searchText);
     const data = await response.json();
 
 // Kontrollerar om några recept hittades
 if (data.recipes.length === 0) {
     message.textContent = "Inga recept hittades, prova en ny sökfras!";
+    recipeSection.innerHTML = "";
     return;
     }
 
@@ -130,15 +132,12 @@ if (data.recipes.length === 0) {
         instructionsList.appendChild(instructionItem);
     });
 
+// Felhantering vid API-anrop
+    } catch (error) {
+        recipeSection.innerHTML = "";
+        message.textContent = "Ett fel uppstod, försök igen senare.";
 
-
-
-
-
-
-
-
-
+    }
 }
 
 
