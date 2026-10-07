@@ -70,7 +70,6 @@ if (data.recipes.length === 0) {
 
 // Skapar och visar receptets information
     const servings = document.createElement("p");
-   
     const servingsStrong = document.createElement("strong");
     servingsStrong.textContent = "Servings: ";
 // Lägger "Servings:" inuti p-elementet
