@@ -32,6 +32,13 @@ getRecipes(searchText);
 async function getRecipes(searchText) {
     try {
     const response = await fetch("https://dummyjson.com/recipes/search?q=" + searchText);
+
+// Upptäcker eventuella fel vid API-anrop
+    if (!response.ok) {
+    throw new Error("Något gick fel vid API-anropet.");
+    }
+
+// Omvandlar svaret från API:t till JSON
     const data = await response.json();
 
 // Kontrollerar om några recept hittades
@@ -135,7 +142,6 @@ if (data.recipes.length === 0) {
     } catch (error) {
         recipeSection.innerHTML = "";
         message.textContent = "Ett fel uppstod, försök igen senare.";
-
     }
 }
 
