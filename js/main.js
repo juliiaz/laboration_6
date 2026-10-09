@@ -138,10 +138,11 @@ if (data.recipes.length === 0) {
         instructionsList.appendChild(instructionItem);
     });
 
-// Felhantering vid API-anrop
+// Visar felmeddelande på webbplatsen och skriver ut felet i konsolen
     } catch (error) {
         recipeSection.innerHTML = "";
         message.textContent = "Ett fel uppstod, försök igen senare.";
+        console.error(error);
     }
 }
 
